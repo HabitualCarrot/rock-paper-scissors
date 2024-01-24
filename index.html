@@ -19,46 +19,76 @@ const paperRockScissors = ["rock", "paper", "scissors"]
 // create function that randomly selects a value from the array assigned to paperRockScissors
 
 function getComputerChoice() {
-   return paperRockScissors[Math.round(Math.random() * paperRockScissors.length)]
+   return paperRockScissors[Math.floor(Math.random() * paperRockScissors.length)]
 }
 
 
 
 // create a function that will take the player selection and computer selection
+let playerSelection = prompt("rock, paper, scissors?")
+let computerSelection = getComputerChoice()
+let playerScore = 0
+let compScore = 0
+
 
 function playRound(playerSelection, computerSelection){
     
     if (playerSelection === computerSelection){
-        return ("You tied!")
+        return ("You tied! Try again") 
     }
     else if (playerSelection === "rock" && computerSelection === "scissors") {
-        return ("Congrats, you win!")
+        ++ playerScore
+        return ("Rock beats paper, you win!")
     }
     else if (playerSelection === "rock" && computerSelection === "paper") {
-        return ("Sorry, you lost!")
+        ++ compScore
+        return ("Paper beats rock, you lost! The score is currently: You  + ${playerScore} + Computer + ${compScore}")
     }
     else if (playerSelection === "paper" && computerSelection === "scissors") {
-        return ("Sorry, you lost!")
+        ++ compscore
+        return ("Scissors beats paper, you lost!")
     }
     else if (playerSelection === "paper" && computerSelection === "rock") {
-        return ("Congrats, you win!")
+       ++ playerScore
+        return ("Paper beats rock, you win!")
     }
     else if (playerSelection === "scissors" && computerSelection === "paper") {
-        return ("Congrats, you win!")
+       ++ playerScore
+        return ("Scissors beats paper, you win!")
     }
     else if (playerSelection === "scissors" && computerSelection === "rock") {
-        return ("Sorry, you lost!")
+        ++ compscore
+        return ("Rock beats scissors, you lost!")
     }
    // while (playerSelection !== computerSelection);
 }
+
+
     
 
 // Get user input and store that value
-let playerSelection = prompt("Pick Rock, Paper, or Scissors").toLowerCase()
-const computerSelection = getComputerChoice()
+// const playerSelection = prompt("Pick Rock, Paper, or Scissors").toLowerCase()
+// const computerSelection = getComputerChoice()
+// let compScore = 0
+// let playerScore = 0
+
+
+
 
 console.log(playRound(playerSelection, computerSelection))
+console.log(playerScore)
 
+console.log(compScore)
+
+
+// function playGame() {
+//     let playerScore = 0
+//     let compScore = 0
+
+//     while (playerScore < 3 or compScore < 3) {
+//         playRound(playerSelection, computerSelection)
+//     }
+// }
 
 
 </script>
