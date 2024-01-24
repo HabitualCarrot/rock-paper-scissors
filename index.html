@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+
+const paperRockScissors = ["rock", "paper", "scissors"]
+
+
+
+
+
+// create function that randomly selects a value from the array assigned to paperRockScissors
+
+function getComputerChoice() {
+   return paperRockScissors[Math.round(Math.random() * paperRockScissors.length)]
+}
+
+
+
+// create a function that will take the player selection and computer selection
+
+function playRound(playerSelection, computerSelection){
+    
+    if (playerSelection === computerSelection){
+        return ("You tied!")
+    }
+    else if (playerSelection === "rock" && computerSelection === "scissors") {
+        return ("Congrats, you win!")
+    }
+    else if (playerSelection === "rock" && computerSelection === "paper") {
+        return ("Sorry, you lost!")
+    }
+    else if (playerSelection === "paper" && computerSelection === "scissors") {
+        return ("Sorry, you lost!")
+    }
+    else if (playerSelection === "paper" && computerSelection === "rock") {
+        return ("Congrats, you win!")
+    }
+    else if (playerSelection === "scissors" && computerSelection === "paper") {
+        return ("Congrats, you win!")
+    }
+    else if (playerSelection === "scissors" && computerSelection === "rock") {
+        return ("Sorry, you lost!")
+    }
+   // while (playerSelection !== computerSelection);
+}
+    
+
+// Get user input and store that value
+let playerSelection = prompt("Pick Rock, Paper, or Scissors").toLowerCase()
+const computerSelection = getComputerChoice()
+
+console.log(playRound(playerSelection, computerSelection))
+
+
+
+</script>
+
+
+
+</body>
+</html>
